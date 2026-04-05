@@ -1,17 +1,21 @@
 package com.bridgelabz;
 
-import java.util.Scanner;
-
+// Program to display Hello with multiple args using String.join() method
 public class HelloApp {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter number of names: ");
-        int count = scanner.nextInt();
-        scanner.nextLine();
-        for (int i = 0; i < count; i++) {
-            System.out.println("Enter name: ");
-            String name = scanner.nextLine();
-            System.out.println("Hello " + name);
+        // Declare greeting variable
+        String greeting;
+
+        // Check if arguments are provided
+        if (args.length == 0) {
+            // Set default greeting if no arguments provided
+            greeting = "Hello, World!";
+        } else {
+            // Join all names with comma-space delimiter
+            greeting = "Hello, " + String.join(", ", args) + "!";
         }
+
+        // Display the greeting
+        System.out.println(greeting);
     }
 }
